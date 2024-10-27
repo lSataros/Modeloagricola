@@ -15,6 +15,7 @@ Antes de comenzar, asegúrate de tener los siguientes componentes instalados:
 - `pip` para la instalación de paquetes:
 
 -numpy
+
 -matplotlib
 -de flask: Flask, request, jsonify, render_template
 -pandas
