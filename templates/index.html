@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Producto Agrícola</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Predicción de producto agrícola a plantar</h1>
+        <form id="prediction-form">
+            <div class="form-group">
+                <label for="year">Año:</label>
+                <input type="text" id="year" name="year" required>
+            </div>
+            <div class="form-group">
+                <label for="area">Área (ha):</label>
+                <input type="text" id="area" name="area" required>
+            </div>
+            <div class="form-group">
+                <label for="rendimiento">Rendimiento (ha/ton):</label>
+                <input type="text" id="rendimiento" name="rendimiento" required>
+            </div>
+            <div class="form-group">
+                <label for="produccion_nacional">Producción Nacional (ton):</label>
+                <input type="text" id="produccion_nacional" name="produccion_nacional" required>
+            </div>
+            <button type="submit">Hacer Predicción</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        document.getElementById('prediction-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerHTML = data.prediction || data.error;
+            })
+            .catch(error => {
+                document.getElementById('result').innerHTML = 'Error al realizar la predicción: ' + error;
+            });
+        });
+    </script>
+</body>
+</html>
