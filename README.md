@@ -14,12 +14,12 @@ Antes de comenzar, asegúrate de tener los siguientes componentes instalados:
 - Visual Studio Code (VS Code).
 - `pip` para la instalación de paquetes:
 
-   -numpy
-   -matplotlib
-   -de flask: Flask, request, jsonify, render_template
-   -pandas
-   -scikit-learn
-   -joblib
+-numpy
+-matplotlib
+-de flask: Flask, request, jsonify, render_template
+-pandas
+-scikit-learn
+-joblib
    
 - Conexión a internet para la descarga de paquetes y dependencias.
 
