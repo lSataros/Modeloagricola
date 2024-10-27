@@ -7,6 +7,11 @@ Este proyecto implementa un modelo de Perceptrón Multicapa (MLP) para realizar 
 
 Este proyecto entrena un modelo de Perceptrón Multicapa para predecir la producción agrícola basada en datos históricos como año, área cultivada, rendimiento y producción nacional. El modelo se entrena y luego se despliega en un servidor Flask, permitiendo realizar predicciones mediante una API. Se presenta cómo aclaración en este punto que el modelo ofrece una predicción sobre el producto recomendable para cultivo en función del input en base a los datos provistos en cada versión del entrenamiento.
 
+app.py: Contiene la lógica principal del modelo.
+modelo_perceptron.pkl: Contiene el modelo entrenado.
+scaler.pkl: Utiliza un StandardScaler para asegurar que la proporción de los datos coincida con la que el modelo espera obtener.
+label_encoder.pkl: Ayudará a desplegar el nombre del producto en base a su corresponidente valor número en la operación.
+
 ##Requisitos previos
 
 Antes de comenzar, asegúrate de tener los siguientes componentes instalados:
@@ -46,7 +51,7 @@ Para desplegar el servidor Flask de forma local y hacer disponible el modelo par
    
   Esto iniciará el servidor en http://127.0.0.1:5000/.
 
-3. Realizar una Predicción
+2. Realizar una Predicción
    
 Puedes hacer una predicción enviando una solicitud POST a la API:
 
