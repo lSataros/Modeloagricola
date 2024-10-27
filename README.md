@@ -17,30 +17,38 @@ Antes de comenzar, asegúrate de tener los siguientes componentes instalados:
 -numpy
 
 -matplotlib
+
 -de flask: Flask, request, jsonify, render_template
+
 -pandas
+
 -scikit-learn
+
 -joblib
+
    
 - Conexión a internet para la descarga de paquetes y dependencias.
 
 #Aquí dejamos cómo recurso la lista de comandos necesarios para operar: 
   -python -m venv venv
+  
   -.\venv\Scripts\activate
   
 
 Uso del Proyecto
 1. Despliegue Local
 Para desplegar el servidor Flask de forma local y hacer disponible el modelo para predicciones, ejecuta:  
-  -python app.py 
+  -python app.py
+   
   Esto iniciará el servidor en http://127.0.0.1:5000/.
 
-2. Realizar una Predicción
+3. Realizar una Predicción
 Puedes hacer una predicción enviando una solicitud POST a la API:
 
 URL: http://127.0.0.1:5000/predict
 Método: POST
 Aclaración: el formato de entrada será JSON y a continuación un ejemplo de los datos que se pueden proporcionar: 
+
     {
     "Año": 2023,
     "Area (ha)": 1500,
