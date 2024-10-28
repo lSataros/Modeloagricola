@@ -54,7 +54,7 @@ def predict():
         # Decodificar la predicción para obtener el nombre del producto
         product = le.inverse_transform(prediction)[0]
 
-        return jsonify({'prediction': f'El producto predicho es: {product}'})
+        return jsonify({'prediction': f'Puedes cosechar: {product}'})
     
     except Exception as e:
         return jsonify({'error': str(e)})
