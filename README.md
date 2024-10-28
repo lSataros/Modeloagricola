@@ -77,13 +77,20 @@ Aclaración: el formato de entrada será JSON y a continuación un ejemplo de lo
 
 
 
-Colaboradores
+Colaboradores:
+
 Este proyecto fue desarrollado por un equipo de estudiantes del bootcamp de inteligencia artificial y talento tech, versión 2, de MINTIC.
 
-Estudiantes
+Campistas:
+
 Laura Sofía Luna Duque
+
 Edilberto Salazar García
+
 Christian Javier Uchima Sierra
+
 Adriana María Vélez
+
 Ismael Vasco
+
 Gustavo
